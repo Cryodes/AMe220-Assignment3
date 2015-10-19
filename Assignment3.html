@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>
-  Image Resizer
+  Assignment 3
 </title>
 <style>
   #imagePreview{
@@ -29,14 +29,17 @@
 	var crop_x;
 	var crop_y;
 var IOSa = ["App Store", "Apple Pay"];
+var IOSimg = ["http://icons.iconarchive.com/icons/hamzasaleem/stock-style-3/512/App-store-icon.png", "https://support.apple.com/library/content/damedam/applecare/images/en_US/applepay/Apple_Pay_mark_large.png]"];
 var Andorida = ["Play Store", "Android Pay"];
+var Andimg = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIHfXVKmztJg9lCPLoQKZX6F1xEJ7ZTR1A7HgB7gD1LIfwuwEc", "http://investorplace.com/wp-content/uploads/2015/09/Android_Pay_GOOGL.png"];
 function Drop(dropType)
 {
   var select = document.getElementById('icons');
   if(dropType == 1)
   {
-    if(select.options.length != 0)
-    select.options.length =0;
+    if(select.options.length != 0){
+      select.options.length =0;
+	}
     for(var i = 0; i<=IOSa.length-1; i++)
 	{
 	  var opt = document.createElement('option');
@@ -47,18 +50,19 @@ function Drop(dropType)
   }
   else
   {
-    if(select.options.length != 0)
-	select.options.length =0;
+    if(select.options.length != 0){
+      select.options.length =0;
+	}
     for(var i = 0; i<=Andorida.length-1; i++)
 	{
-	 
 	  var opt = document.createElement('option');
-	  opt.value = Androida[i];
-	  opt.innerHTML = Androida[i];
+	  opt.value = Andorida[i];
+	  opt.innerHTML = Andorida[i];
 	  select.appendChild(opt);
 	}
   }
 }
+
 function imageUploaded()
 {
 	
