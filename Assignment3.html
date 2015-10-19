@@ -28,7 +28,37 @@
 	var crop_height = 72;
 	var crop_x;
 	var crop_y;
-	
+var IOSa = ["App Store", "Apple Pay"];
+var Andorida = ["Play Store", "Android Pay"];
+function Drop(dropType)
+{
+  var select = document.getElementById('icons');
+  if(dropType == 1)
+  {
+    if(select.options.length != 0)
+    select.options.length =0;
+    for(var i = 0; i<=IOSa.length-1; i++)
+	{
+	  var opt = document.createElement('option');
+	  opt.value = IOSa[i];
+	  opt.innerHTML = IOSa[i];
+	  select.appendChild(opt);
+	}
+  }
+  else
+  {
+    if(select.options.length != 0)
+	select.options.length =0;
+    for(var i = 0; i<=Andorida.length-1; i++)
+	{
+	 
+	  var opt = document.createElement('option');
+	  opt.value = Androida[i];
+	  opt.innerHTML = Androida[i];
+	  select.appendChild(opt);
+	}
+  }
+}
 function imageUploaded()
 {
 	
@@ -90,7 +120,10 @@ function imageUploaded()
 </head>
 
 <body>
-  <input type="file" name="uploadImage" id="uploadImage" onChange="imageUploaded()">
+  <button type="Button1" onclick="Drop(1)" name="IOS" id="IOSButton">IOS</button>
+  <button type="Button2" onclick="Drop(2)"name="Adroid" id="AndButton">Android</button>
+  <br>
+  <select name="icons" id="icons"> </select>
   <img id="imagePreview">
 </body>
 
